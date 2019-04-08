@@ -22,6 +22,7 @@ BORDER_.title()
 while True:
     try:
         income = int(input("Masukkan Upah/Gaji Anda : . . .Rp"))
+        break
     except:
         print("Input ditolak. Silahkan coba lagi!")
 
