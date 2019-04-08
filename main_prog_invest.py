@@ -19,7 +19,12 @@ class BORDER_():
 
 # inti
 BORDER_.title()
-income = int(input("Masukkan Upah/Gaji Anda : . . .Rp"))
+while True:
+    try:
+        income = int(input("Masukkan Upah/Gaji Anda : . . .Rp"))
+    except:
+        print("Input ditolak. Silahkan coba lagi!")
+
 BORDER_.print2strip()
 
 # format awal untuk data biata dan item kebutuhan harian/bulanan
