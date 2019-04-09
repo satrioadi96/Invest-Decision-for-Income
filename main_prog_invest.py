@@ -14,8 +14,7 @@ class BORDER_():
     def print_end():
         print (("="*30)+("<>"*20)+("="*30))
         
-
-# ======================================================================================================
+# =============================================================================
 
 # inti
 BORDER_.title()
@@ -25,7 +24,6 @@ while True:
         break
     except:
         print("Input ditolak. Silahkan coba lagi!")
-
 BORDER_.print2strip()
 
 # format awal untuk data biata dan item kebutuhan harian/bulanan
@@ -35,19 +33,12 @@ item = []
 #lst = []
 cst = []
 
-if income == 0:
-    print("\t\t\t\t\t\tSELESAI!")
-    quit()
-
-for form in range(0,income) :
-    
+while True:    
     # form kebutuhan
     name_ = str(input("Nama kebutuhan Anda :  . . "))
     day_month = str(input("\nKebutuhan Harian/Bulanan? (H/B)  . . "))
-    
     item.append(name_)
     #lst.append(day_month)
-    
     
     # memasukkan input biaya (harian/bulanan)
     if day_month == 'H':
@@ -68,15 +59,12 @@ for form in range(0,income) :
     elif confirm_ == 'T':
         break
 
-
 # patokan hari kerja dalam 1 bulan
 days = int(input("Banyaknya hari kerja dalam 1 bulan : ... "))
 
 # rumus perhitungan (termasuk zakat jika sesuai kaidah)
 zakat = income * float(2.5/100)
-cost_total_days = (day_cost) * days
-cost_total_months = (month_cost)
-netto = income - cost_total_days - cost_total_months
+netto = income - (((day_cost) * days) + (month_cost))
 
 # inout tabungan/investasi
 invest = int(input("\nJumlah uang yang akan Anda tabung : .. Rp"))
@@ -89,5 +77,4 @@ else:
     print ("Anda tidak bisa menabung sebesar Rp{} dengan sisa gaji/upah Rp{} !\nSegera berhemat dan atur kembali kebutuhan Anda :( !!!".format(invest, netto))
     
 print("\nDaftar Kebutuhan Anda:", dict(zip(item , cst)))
-
 BORDER_.print_end()
