@@ -1,7 +1,7 @@
 #program sederhana untuk keputusan menabung dari upah/gaji
 
 # membuat kelas border/garis tepi berupa judul dan pembatas form program
-class BORDER_():
+class BORDER_:
     def title():
         print (("="*32)+" KEPUTUSAN MENABUNG DARI GAJI/UPAH "+("="*32))
 
@@ -23,14 +23,14 @@ while True:
         income = int(input("Masukkan Upah/Gaji Anda : . . .Rp"))
         break
     except:
-        print("Input ditolak. Silahkan coba lagi!")
+        print("\nInput ditolak. Silahkan coba lagi!\n")
 BORDER_.print2strip()
 
 # format awal untuk data biata dan item kebutuhan harian/bulanan
 day_cost = 0
 month_cost = 0
 item = []
-#lst = []
+lst_d_m = []
 cst = []
 
 while True:    
@@ -38,7 +38,7 @@ while True:
     name_ = str(input("Nama kebutuhan Anda :  . . "))
     day_month = str(input("\nKebutuhan Harian/Bulanan? (H/B)  . . "))
     item.append(name_)
-    #lst.append(day_month)
+    lst_d_m.append(day_month)
     
     # memasukkan input biaya (harian/bulanan)
     if day_month == 'H':
@@ -73,8 +73,14 @@ invest = int(input("\nJumlah uang yang akan Anda tabung : .. Rp"))
 BORDER_.print2strip()
 if netto >= invest:
     print ("Sisa gaji/upah Anda sebesar Rp{} cukup untuk menabung Rp{} .\nBila sesuai kaidah, bayarlah  Rp{} untuk Zakat Profesi!".format(netto, invest, zakat))
-else:
+elif invest >= netto >= 0:
     print ("Anda tidak bisa menabung sebesar Rp{} dengan sisa gaji/upah Rp{} !\nSegera berhemat dan atur kembali kebutuhan Anda :( !!!".format(invest, netto))
-    
-print("\nDaftar Kebutuhan Anda:", dict(zip(item , cst)))
+else:
+    print ("ANDA DARURAT HUTANG Rp{} ! SEGERA DIBAYAR ! ! !".format((-1)*netto))
+
+
+# penyusunan format daftar dari dict
+daftar = dict(zip(zip(item, lst_d_m), cst))
+
+print("\nDaftar Kebutuhan Anda:\n", {[hasil, daftar(hasil)] for hasil in daftar} )
 BORDER_.print_end()
