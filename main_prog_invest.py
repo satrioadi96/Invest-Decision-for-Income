@@ -1,9 +1,11 @@
-#program sederhana untuk keputusan menabung dari upah/gaji
+# BAHASA INDONESIA VERSION
+
+# program sederhana untuk keputusan menabung dari upah/gaji
 
 # membuat kelas border/garis tepi berupa judul dan pembatas form program
 class BORDER_:
     def title():
-        print (("="*32)+" KEPUTUSAN MENABUNG DARI GAJI/UPAH "+("="*32))
+        print (("="*27)+" KEPUTUSAN MENABUNG DARI GAJI/UPAH BULANAN "+("="*27))
 
     def print2strip():
         print (("="*100))
@@ -13,6 +15,7 @@ class BORDER_:
         
     def print_end():
         print (("="*30)+("<>"*20)+("="*30))
+
         
 # =============================================================================
 
@@ -26,7 +29,7 @@ while True:
         print("\nInput ditolak. Silahkan coba lagi!\n")
 BORDER_.print2strip()
 
-# format awal untuk data biata dan item kebutuhan harian/bulanan
+# format awal untuk data biaya dan item kebutuhan harian/bulanan
 day_cost = 0
 month_cost = 0
 item = []
@@ -38,6 +41,8 @@ while True:
     name_ = str(input("Nama kebutuhan Anda :  . . "))
     day_month = str(input("\nKebutuhan Harian/Bulanan? (H/B)  . . "))
     item.append(name_)
+    H = 'Harian'
+    B = 'Bulanan'
     lst_d_m.append(day_month)
     
     # memasukkan input biaya (harian/bulanan)
@@ -82,5 +87,8 @@ else:
 # penyusunan format daftar dari dict
 daftar = dict(zip(zip(item, lst_d_m), cst))
 
-print("\nDaftar Kebutuhan Anda:\n", {[hasil, daftar(hasil)] for hasil in daftar} )
+print("\nDaftar Kebutuhan Anda:\n")
+print('(Nama Kebutuhan, (H/B)): Biaya (Rp)\n----------------------------')
+print(daftar)
+
 BORDER_.print_end()
