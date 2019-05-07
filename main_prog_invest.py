@@ -16,10 +16,9 @@ class BORDER_:
     def print_end():
         print (("="*30)+("<>"*20)+("="*30))
 
-        
 # =============================================================================
 
-# inti
+# inti program
 BORDER_.title()
 while True:
     try:
@@ -35,15 +34,15 @@ month_cost = 0
 item = []
 lst_d_m = []
 cst = []
+# ...termasuk untuk legenda kebutuhan
+pilihan_hb={'H' : 'Kebutuhan Harian', 'B' : 'Kebutuhan Bulanan'}
 
 while True:    
     # form kebutuhan
     name_ = str(input("Nama kebutuhan Anda :  . . "))
     day_month = str(input("\nKebutuhan Harian/Bulanan? (H/B)  . . "))
     item.append(name_)
-    H = 'Harian'
-    B = 'Bulanan'
-    lst_d_m.append(day_month)
+    lst_d_m.append(pilihan_hb[day_month])
     
     # memasukkan input biaya (harian/bulanan)
     if day_month == 'H':
@@ -77,7 +76,7 @@ invest = int(input("\nJumlah uang yang akan Anda tabung : .. Rp"))
 # hasil keputusan
 BORDER_.print2strip()
 if netto >= invest:
-    print ("Sisa gaji/upah Anda sebesar Rp{} cukup untuk menabung Rp{} .\nBila sesuai kaidah, bayarlah  Rp{} untuk Zakat Profesi!".format(netto, invest, zakat))
+    print ("Sisa gaji/upah Anda sebesar Rp{}. Sudah cukup untuk menabung Rp{} .\nBila sesuai kaidah, bayarlah  Rp{} untuk Zakat Profesi!".format(netto, invest, zakat))
 elif invest >= netto >= 0:
     print ("Anda tidak bisa menabung sebesar Rp{} dengan sisa gaji/upah Rp{} !\nSegera berhemat dan atur kembali kebutuhan Anda :( !!!".format(invest, netto))
 else:
@@ -87,8 +86,11 @@ else:
 # penyusunan format daftar dari dict
 daftar = dict(zip(zip(item, lst_d_m), cst))
 
-print("\nDaftar Kebutuhan Anda:\n")
-print('(Nama Kebutuhan, (H/B)): Biaya (Rp)\n----------------------------')
-print(daftar)
+#def tabel_daftar_item(butuh, hari_bulan, harga):
+#    print()
+
+print("\nDaftar Kebutuhan Anda:\n"+('---'*33))
+for tanda in daftar:
+        print(tanda, '  --->\t\t  Rp',daftar[tanda])
 
 BORDER_.print_end()
