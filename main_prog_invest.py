@@ -64,7 +64,7 @@ while True:
         break
 
 # patokan hari kerja dalam 1 bulan
-days = int(input("Banyaknya hari kerja dalam 1 bulan : ... "))
+days = int(input("Waktu hari kerja dalam 1 bulan : ... "))
 
 # rumus perhitungan (termasuk zakat jika sesuai kaidah)
 zakat = income * float(2.5/100)
@@ -80,7 +80,7 @@ if netto >= invest:
 elif invest >= netto >= 0:
     print ("Anda tidak bisa menabung sebesar Rp{} dengan sisa gaji/upah Rp{} !\nSegera berhemat dan atur kembali kebutuhan Anda :( !!!".format(invest, netto))
 else:
-    print ("ANDA DARURAT HUTANG Rp{} ! SEGERA DIBAYAR ! ! !".format((-1)*netto))
+    print ("ANDA DARURAT HUTANG Rp{} ! MOHON SEGERA MELUANSINYA ! ! !".format((-1)*netto))
 
 
 # penyusunan format daftar dari dict
@@ -91,6 +91,6 @@ daftar = dict(zip(zip(item, lst_d_m), cst))
 
 print("\nDaftar Kebutuhan Anda:\n"+('---'*33))
 for tanda in daftar:
-        print(tanda, '  --->\t\t  Rp',daftar[tanda])
+    print(tanda[0],'\t:\t',tanda[1],'\t\t--->\t\tRp',daftar[tanda])
 
 BORDER_.print_end()
