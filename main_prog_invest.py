@@ -86,11 +86,8 @@ else:
 # penyusunan format daftar dari dict
 daftar = dict(zip(zip(item, lst_d_m), cst))
 
-#def tabel_daftar_item(butuh, hari_bulan, harga):
-#    print()
-
 print("\nDaftar Kebutuhan Anda:\n"+('---'*33))
 for tanda in daftar:
-    print(tanda[0],'\t:\t',tanda[1],'\t\t--->\t\tRp',daftar[tanda])
+    print(tanda[0],'\t\t--  ',tanda[1],'\t--->\tRp',daftar[tanda])
 
 BORDER_.print_end()
