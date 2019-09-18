@@ -21,4 +21,4 @@ Addition Variable :
 	Variabel : zakat
 
 # How to run
-In Terminal/Console/CMD, use _python3 main_prog_invest.py_ (for Python version 3+ , latest : 3.7.3, standard : 3.6.7)
+In Terminal/Console/CMD, use < python3 main_prog_invest.py > (for Python version 3+ , latest : 3.7.3, standard : 3.6.7)
